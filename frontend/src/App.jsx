@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import ProtectedRoute from './components/ProtectedRoute'
 import Dashboard from './pages/Dashboard'
 import Policies from './pages/Policies'
 import Risks from './pages/Risks'
@@ -15,11 +14,11 @@ export default function App() {
       <div className="container mx-auto px-4 py-6">
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-          <Route path="/policies" element={<ProtectedRoute><Policies /></ProtectedRoute>} />
-          <Route path="/risks" element={<ProtectedRoute><Risks /></ProtectedRoute>} />
-          <Route path="/compliance" element={<ProtectedRoute><Compliance /></ProtectedRoute>} />
-          <Route path="/workflows" element={<ProtectedRoute><WorkflowConfig /></ProtectedRoute>} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/policies" element={<Policies />} />
+          <Route path="/risks" element={<Risks />} />
+          <Route path="/compliance" element={<Compliance />} />
+          <Route path="/workflows" element={<WorkflowConfig />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
